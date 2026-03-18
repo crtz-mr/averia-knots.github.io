@@ -1,28 +1,26 @@
 function addComment() {
-  let name = document.getElementById("name").value.trim();
-  let comment = document.getElementById("comment").value.trim();
-  if (!name || !comment) return alert("Please enter both name and comment");
-  let comments = JSON.parse(localStorage.getItem("comments")) || [];
-  comments.push({name, comment});
-  localStorage.setItem("comments", JSON.stringify(comments));
-
-  document.getElementById("name").value = '';
-  document.getElementById("comment").value = '';
-
-displayComments();
   
-}
+  let name = document.getElementById("name").value.trim() || "Anonymous";
+  let comment = document.getElementById("comment").value.trim();
+  
+  if (!comment) {
+    alert("Please enter a comment.");
+    return;
+  }
 
-function displayComments() {
-  let list = document.getElementById("commentList");
-  list.innerHTML = '';
-  let comments = JSON.parse(localStorage.getItem("comments")) || [];
-  comments.forEach(c => {
-    let div = document.createElement("div");
-    div.className = "comment";
-    div.innerHTML = `<b>${c.name}</b>: ${c.comment}`;
-    list.appendChild(div);
+  const formData = new URLSearchParams();
+  formData.append("entry.682198612", name);
+  formData.append("entry.2081790477", comment);
+
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLSfzV8UNpupzcSIw1I_CFNrk2pL3lFDK61ec1hIDXxTY2m03RA/formResponse", {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
   });
-}
+  
+  document.getElementById("feedbackModal").style.display= "flex";
 
-displayComments();
+  document.getElementById("name").value = "";
+  document.getElementById("comment").value = "";
+
+}
