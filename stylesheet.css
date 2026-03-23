@@ -1,1 +1,231 @@
+.navigation img { 
+    height: 30px; /*--- control logo size ---*/
+    margin: 0px 10px 0px 0px; /*--- create a space between logo and logo name ---*/
+}
 
+.navigation {
+    display: flex; /*--- flexbox layout ---*/
+    align-items: center; /*--- align vertically ---*/
+    justify-content: center; /*--- align horizontally ---*/
+    flex-wrap: wrap; /*--- items moves to the second line on small screens ---*/
+    padding: 20px 40px;   
+    gap: 30px;
+ }
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #1f1f1f;
+  font-size: 25px;
+  font-weight: 4000;         
+  letter-spacing: 2px; 
+  margin-top: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;                 
+  align-items: center;
+  margin-left: auto; /*--- pushes navigation to the right side ---*/
+}
+
+
+.nav a {               
+  font-family:'Times New Roman', Times, serif;
+  text-decoration: none; /*--- prevent underline / color changing depending on link behaviour ---*/
+  color: #1f1f1f;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .nav a{               
+      justify-content: center; /*--- align items horizontally (center) on smaller screen ---*/
+    }
+    .nav {               
+      margin: auto; /*--- align items horizontally (center) on smaller screen ---*/
+    }
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  background: #fceef6;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.page-wrapper {
+    max-width: 1250px;
+    width: 100%;  
+    margin: 40px auto;                        
+    background: white;
+}
+
+.head-text {
+    background:linear-gradient(to top,white, #ffdef2,white);
+    padding: 100px 10%;
+    
+}
+
+.head-text h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #1f1f1f;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 30px;
+}
+
+h2 {
+  color: #ff94d4;
+  margin-bottom: 20px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.contact-text h3 {
+  color: #ff94d4;
+}
+
+.contacts, .contacts li {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.contacts a {
+  color: #ffc3e7;
+  text-decoration: none;
+}
+
+.contacts a:hover {
+  font-weight: bold;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px #d2cfd1;
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.project img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project img:hover{
+  transform: scale(1.04);
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+
+.modal-content{
+  background:white;
+  width:90%;
+  max-width:800px;
+  max-height:90vh;
+  overflow:auto;
+  border-radius:12px;
+  padding:20px;
+}
+
+.modal img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+}
+
+.tutorial-text {
+  margin-top:10px;
+  line-height:1.5;
+}
+
+.close{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #d2cfd1;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #fceef6;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff94d4;
+}
+
+.comment {
+  background: #fceef6;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+#feedback {
+  text-align: center;
+  max-width: 400px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ff94d4;
+  margin-top: 50px;
+}
